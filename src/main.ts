@@ -1,24 +1,24 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { RoomType } from "./type";
+import simpleData from './data/simple.json'
+import tShapeData from './data/t_shape.json'
+import triangleData from "./data/triangle.json"
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
+console.log(simpleData)
+console.log(tShapeData)
+console.log(triangleData)
+
+const app = document.querySelector("#app");
+if (app) {
+  app.innerHTML = `
+    <canvas id="roomCanvas" width="500" height="500"></canvas>
+    <div class="info">
+        <p><strong>Length:</strong> <span id="lengthValue">-</span></p>
+        <p><strong>Width:</strong> <span id="widthValue">-</span></p>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+    <button id="changeDimensions">Change Length & Width</button>
+  `;
+}
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+console.log(app)
+
