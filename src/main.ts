@@ -1,8 +1,9 @@
 import "./style.css";
-import { RoomType } from "./type";
+import { RoomType } from "./utils/type";
 import simpleData from './data/simple.json'
 import tShapeData from './data/t_shape.json'
 import triangleData from "./data/triangle.json"
+import { calculateRoomDimensions } from "./utils/helpers";
 
 console.log(simpleData)
 console.log(tShapeData)
@@ -19,6 +20,16 @@ if (app) {
     <button id="changeDimensions">Change Length & Width</button>
   `;
 }
+
+const simpleRoomDimensions = calculateRoomDimensions(simpleData)
+const tshapeRoomDimensions = calculateRoomDimensions(tShapeData)
+const triangleRoomDimensions = calculateRoomDimensions(triangleData)
+
+console.log(simpleRoomDimensions)
+console.log(tshapeRoomDimensions)
+console.log(triangleRoomDimensions)
+
+
 
 console.log(app)
 

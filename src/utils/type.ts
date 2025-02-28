@@ -8,9 +8,9 @@ export type RoomType = {
     y: number;
     wallStarts: {
       id: string;
-    };
+    }[];
     wallEnds: {
       id: string;
-    };
+    }[];
   }[];
 };
