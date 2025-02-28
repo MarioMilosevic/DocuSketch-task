@@ -21,15 +21,29 @@ body {
   margin: 0 auto;
 }
 
-.roomCanvas {
-  border: 1px solid red;
-  /* width: 100%; */
-}
 
 .info {
-  background-color: blue;
+  /* background-color: blue; */
   display: flex;
+  flex-direction: column;
+  border: 1px solid white;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.dimensions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
