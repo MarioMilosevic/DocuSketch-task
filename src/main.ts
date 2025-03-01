@@ -4,6 +4,7 @@ import tShapeRoom from "./data/t_shape.json";
 
 const app = document.querySelector("#app") as HTMLDivElement;
 app.innerHTML = `
+    <h1 class="title">DocuSketch Task</h1>
   <canvas class="roomCanvas"></canvas>
   <div class="info">
     <div class="dimensions">
@@ -48,7 +49,7 @@ function drawRoom(room: RoomType, rotate: boolean) {
   const centerY = (maxY + minY) / 2;
 
   if (rotate) {
-    ctx.translate(canvas.width / 2, canvas.height / 2); 
+    ctx.translate(canvas.width / 2, canvas.height / 2);
     ctx.rotate(Math.PI / 2);
   } else {
     ctx.translate(canvas.width / 2, canvas.height / 2);
@@ -57,13 +58,11 @@ function drawRoom(room: RoomType, rotate: boolean) {
   ctx.scale(scale, scale);
   ctx.translate(-centerX, -centerY);
 
-  
   if (length && width) {
     length.textContent = Math.round(roomHeight * scale).toString();
     width.textContent = Math.round(roomWidth * scale).toString();
   }
 
-  // Draw room walls
   ctx.strokeStyle = "white";
   ctx.lineWidth = 2;
 
