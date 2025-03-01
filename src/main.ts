@@ -59,8 +59,13 @@ function drawRoom(room: RoomType, rotate: boolean) {
   ctx.translate(-centerX, -centerY);
 
   if (length && width) {
-    length.textContent = Math.round(roomHeight * scale).toString();
-    width.textContent = Math.round(roomWidth * scale).toString();
+    if (rotate) {
+      width.textContent = Math.round(roomHeight * scale).toString();
+      length.textContent = Math.round(roomWidth * scale).toString();
+    } else {
+      length.textContent = Math.round(roomHeight * scale).toString();
+      width.textContent = Math.round(roomWidth * scale).toString();
+    }
   }
 
   ctx.strokeStyle = "white";
